@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="8dp"
+    tools:context=".Events.RegisterEvent">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp" >
+
+<!--    <ImageView-->
+<!--        android:id="@+id/TakingPlace_img"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:src="@drawable/uploadimagelogo" />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/TakingPlace_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/uploadimagelogo"
+        app:civ_border_color="@color/design_default_color_primary"
+        app:civ_border_width="2dp"/>
+
+
+    <EditText
+        android:id="@+id/Et_TakingPlace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:hint="Location:"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/Et_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Et_TakingPlace"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:hint="Date:"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:ems="10"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/Et_Availability"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Et_Date"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:hint="Left positions:"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/Et_StartHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Et_Availability"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:hint="Start hour:"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/Et_EndHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Et_StartHour"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:hint="End hour"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/Et_EventSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Et_EndHour"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:hint="Salary:"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_select_Imgae"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Et_EventSalary"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:text="Select Img"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_uploadEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_select_Imgae"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        android:text="Upload"
+        android:textColor="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/PB_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:layout_below="@id/btn_uploadEvent"
+        android:layout_toRightOf="@id/TakingPlace_img"
+        />
+
+</RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+

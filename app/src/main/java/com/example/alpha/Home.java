@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.alpha.Events.RegisterEvent;
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
 import com.example.alpha.FragmentsClasses.SalaryFragment;
@@ -75,9 +76,9 @@ public class Home extends AppCompatActivity {
                         Toast.makeText(Home.this, "Salary.", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.LogOut:
-                        Toast.makeText(Home.this, "Logout.", Toast.LENGTH_LONG).show();
-                        FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(Home.this, SignIn.class));
+                        //Toast.makeText(Home.this, "Logout.", Toast.LENGTH_LONG).show();
+                        //FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(Home.this, RegisterEvent.class));
                         break;
                 }
                 //displaying the fragments

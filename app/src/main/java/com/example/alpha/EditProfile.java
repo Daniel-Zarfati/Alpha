@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +39,7 @@ public class EditProfile extends AppCompatActivity {
     private Button closeButton, saveButton;
     private TextView profileChangeBtn;
     private EditText edtName,edtIdNumber,edtPhoneNumber,edtCity;
-    private CheckBox cbGardId;
+   // private CheckBox cbGardId;
 
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
@@ -72,7 +71,7 @@ public class EditProfile extends AppCompatActivity {
         edtIdNumber = findViewById(R.id.newIdNumber);
         edtPhoneNumber = findViewById(R.id.newPhoneNumber);
         edtCity = findViewById(R.id.newCity);
-        cbGardId = findViewById(R.id.newGardId);
+        //cbGardId = findViewById(R.id.newGardId);
 
 
         closeButton.setOnClickListener(new View.OnClickListener() {
