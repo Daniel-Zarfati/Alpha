@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262434"
+
+    tools:context=".Home">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="40dp"
+            android:layout_height="70dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/design_default_color_primary"
+                android:background="@drawable/avatarcirclegray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/nonitofont"
+                    android:layout_height="wrap_content"
+                    android:text="Not daniel"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/nonitofont"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome back!"/>
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="481dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="0dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomBar"
+            app:menu="@menu/menu_items"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_gravity="bottom"
+
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="24dp"
+
+            android:background="@drawable/bg"
+            app:elevation="2dp"
+            app:itemIconSize="26dp"
+            app:itemIconTint="@drawable/item_selector"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+             />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+
+
+<!--<LinearLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent">-->
+
+<!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--    android:id="@+id/bottomBar"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="58dp"-->
+<!--    android:layout_gravity="bottom"-->
+
+<!--    android:layout_marginLeft="35dp"-->
+<!--    android:layout_marginTop="30dp"-->
+<!--    android:layout_marginRight="35dp"-->
+<!--    android:layout_marginBottom="24dp"-->
+
+<!--    android:background="@drawable/bg"-->
+<!--    app:elevation="2dp"-->
+<!--    app:itemIconSize="26dp"-->
+<!--    app:itemIconTint="@drawable/item_selector"-->
+<!--    app:itemRippleColor="@android:color/transparent"-->
+<!--    app:labelVisibilityMode="unlabeled"-->
+<!--    app:menu="@menu/menu_items" />-->
+
+<!--</LinearLayout>-->

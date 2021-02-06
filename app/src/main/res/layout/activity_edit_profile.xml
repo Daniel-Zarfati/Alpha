@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262434"
+    tools:context=".EditProfile">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/avatarcirclegray"
+        app:civ_border_color="@color/design_default_color_primary"
+        app:civ_border_width="2dp"/>
+
+    <TextView
+        android:id="@+id/change_profile_btn"
+        android:layout_below="@id/profile_image"
+        android:text="Change Profile"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"/>
+
+    <EditText
+        android:id="@+id/newName"
+        android:layout_below="@+id/change_profile_btn"
+        android:layout_marginTop="25dp"
+        android:textSize="24sp"
+        android:hint="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:color/white"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+    <EditText
+        android:id="@+id/newIdNumber"
+        android:layout_below="@+id/newName"
+        android:layout_marginTop="17dp"
+        android:textSize="24sp"
+        android:hint="IDnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:color/white"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+    <EditText
+        android:id="@+id/newPhoneNumber"
+        android:layout_below="@+id/newIdNumber"
+        android:layout_marginTop="17dp"
+        android:textSize="24sp"
+        android:hint="Phone Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:color/white"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+    <EditText
+        android:id="@+id/newCity"
+        android:layout_below="@+id/newPhoneNumber"
+        android:layout_marginTop="17dp"
+        android:textSize="24sp"
+        android:hint="City"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:color/white"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+    <CheckBox
+        android:id="@+id/newGardId"
+        android:layout_below="@+id/newCity"
+        android:layout_marginTop="17dp"
+        android:textSize="20sp"
+        android:hint="Gard ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:color/white"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        />
+
+
+<LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="16dp"
+        android:layout_below="@id/newGardId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Close"
+            android:textStyle="bold"
+            android:fontFamily="@font/nonitofont"
+            android:textColor="#ffffff"
+            android:layout_marginRight="6dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:fontFamily="@font/nonitofont"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="Save"
+            android:layout_marginLeft="6dp"
+            android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+</RelativeLayout>
+

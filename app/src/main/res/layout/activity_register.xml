@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#262434"
+    tools:context=".Register">
+
+
+
+    <ImageView
+        android:id="@+id/ProfileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:clickable="true"
+        android:layout_marginTop="40dp" />
+    <!--        android:background="@drawable/uploadimagelogocolors"-->
+
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:text="Welcome to TQS"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/browseimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorAccent"
+        android:fontFamily="sans-serif"
+        android:text="Upload Profile Pic"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        app:backgroundTint="#000000" />
+
+    <EditText
+        android:id="@+id/edtName"
+        style="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:hint="Name"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtIDnumber"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:hint="IDnumber"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtPhoneNumber"
+        style="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:hint="Phone Number"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtCity"
+        style="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:hint="City"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:hint="Email"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif"
+        android:hint="Password"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp" />
+
+    <ProgressBar
+        android:id="@+id/PB_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/btnRegisterUser"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#CDD1D7"
+        android:fontFamily="sans-serif"
+        android:text="Register"
+        android:textColor="@android:color/white"
+        android:textColorLink="#CDD1D7"
+        android:textSize="15sp"
+        app:backgroundTint="#CDD1D7" />
+</LinearLayout>
+

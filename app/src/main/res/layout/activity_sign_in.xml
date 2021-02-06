@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262434"
+    android:orientation="vertical"
+    tools:context=".SignIn">
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/Security"
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20sp"
+                android:layout_gravity="center|top"
+                android:src="@drawable/security" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:orientation="vertical"
+                android:paddingTop="215dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:text="login"
+                    android:textColor="@android:color/white"
+                    android:textSize="40dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="52.7dp"
+                    android:text="Enter your mail"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="18dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="17sp" />
+
+                <View
+                    android:layout_width="263dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="7dp"
+                    android:background="#f2f2f3" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="37dp"
+                    android:text="Enter your password"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:inputType="textPassword"
+                        android:maxLength="12"
+                        android:maxLines="1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#ffffff"
+                        android:textSize="17sp" />
+
+
+
+                <View
+                    android:layout_width="263dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="7dp"
+                    android:background="#f2f2f3" />
+
+
+                <ImageView
+                    android:id="@+id/Signin"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="30dp"
+                    android:clickable="true"
+                    android:src="@drawable/okwhite" />
+
+                <TextView
+                    android:id="@+id/btn_SignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="SignUp"
+                    android:clickable="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="134dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="bottom"
+                    android:text="forgot Password?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/PB_progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+    </LinearLayout>
+</LinearLayout>
