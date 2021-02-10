@@ -7,7 +7,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,80 +19,73 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SignIn extends AppCompatActivity {
+public class SignInManager extends AppCompatActivity {
 
-    EditText editEmail,editPassword;
-    ImageView ivsignIn,Security;
-    TextView tvSignUp,forgotPassword;
+    EditText editEmailM, editPasswordM,editPinCode;
+    ImageView ivSignIn,Security;
 
-    private FirebaseAuth mAuth;
+    DatabaseReference databaseref;
+
+    private FirebaseAuth MAuth;
     ProgressDialog loadingBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_sign_in_manager);
 
-        mAuth = FirebaseAuth.getInstance();
+        databaseref = FirebaseDatabase.getInstance().getReference("User");
+        MAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
 
-        editEmail = findViewById(R.id.edtEmail);
-        editPassword = findViewById(R.id.edtPassword);
-
-        tvSignUp = findViewById(R.id.btn_SignUp);
-
-        forgotPassword = findViewById(R.id.forgotPassword);
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignIn.this,ForgotPassword.class);
-                startActivity(intent);
-            }
-        });
-
-        tvSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignIn.this,Register.class);
-                startActivity(intent);
-            }
-        });
-
+        editEmailM = findViewById(R.id.emailEdt);
+        editPasswordM = findViewById(R.id.passwordEdt);
+        editPinCode = findViewById(R.id.pinCodeEdt);
         Security = findViewById(R.id.Security);
-        Security.setOnClickListener(new View.OnClickListener() {
+
+
+        ivSignIn = findViewById(R.id.SignInPin);
+        ivSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignIn.this,SignInManager.class);
-                startActivity(intent);
+                String email = editEmailM.getText().toString();
+                String password = editPasswordM.getText().toString();
+                String pinCode = editPinCode.getText().toString();
+
+                SigninM(email,password,pinCode);
             }
+
         });
+    }
 
-        ivsignIn = findViewById(R.id.Signin);
-        ivsignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = editEmail.getText().toString();
-                String password = editPassword.getText().toString();
-                Signin(email,password);
-            }
-
-    });
-}
-
-    private void Signin(String email, String password) {
+    private void SigninM(String email, String password,String pinCode) {
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editEmail.setError("Please provide valid email!");
-            editEmail.requestFocus();
+            editEmailM.setError("Please provide valid email!");
+            editEmailM.requestFocus();
             return;
         }
 
         if(password.length()<6){
-            editPassword.setError("Min password length should be 6 characters!");
-            editPassword.requestFocus();
+            editPasswordM.setError("Min password length should be 6 characters!");
+            editPasswordM.requestFocus();
+            return;
+        }
+
+//        if(!pinCode.equals(databaseref.g)){
+//            editPinCode.setError("Pin Code isn't match!");
+//            editPinCode.requestFocus();
+//            return;
+//        }
+
+        if(!pinCode.equals("307839035")) {
+            editPinCode.setError("Pin Code isn't match!");
+            editPinCode.requestFocus();
             return;
         }
 
@@ -102,7 +94,7 @@ public class SignIn extends AppCompatActivity {
             loadingBar.setMessage("Please wait...");
             loadingBar.show();
 
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            MAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -115,10 +107,12 @@ public class SignIn extends AppCompatActivity {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {   // Retriving data from Current user to Gloabl Var to keep and display it
                                         GlobalVar.currentUser = snapshot.getValue(User.class);
 
-                                        Intent home = new Intent(SignIn.this,Home.class);
+                                        databaseref.child(snapshot.getKey()).child("manager").setValue(true);
+
+                                        Intent home = new Intent(SignInManager.this,Home.class);
                                         startActivity(home);
 
-                                        Toast.makeText(SignIn.this, "Successfully sign in", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SignInManager.this, "Successfully sign in", Toast.LENGTH_SHORT).show();
                                         finish();
                                     }
 
@@ -129,7 +123,7 @@ public class SignIn extends AppCompatActivity {
                                 });
                     }
                     else{
-                        Toast.makeText(SignIn.this, "Sign in failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignInManager.this, "Sign in failed", Toast.LENGTH_SHORT).show();
                         loadingBar.dismiss();
                     }
                 }

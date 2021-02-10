@@ -1,6 +1,7 @@
 package com.example.alpha;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -53,12 +54,12 @@ public class Register extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String name = editName.getText().toString();
-            String Idnumber = editIdNumber.getText().toString();
-            String Phonenumber = editPhoneNumber.getText().toString();
-            String City = editCity.getText().toString();
-            String email = editEmail.getText().toString();
-            String pass = editPassword.getText().toString();
+            String name = editName.getText().toString().trim();
+            String Idnumber = editIdNumber.getText().toString().trim();
+            String Phonenumber = editPhoneNumber.getText().toString().trim();
+            String City = editCity.getText().toString().trim();
+            String email = editEmail.getText().toString().trim();
+            String pass = editPassword.getText().toString().trim();
 
 
             RegisterUser(name,Idnumber,Phonenumber,City,email,pass);
@@ -138,6 +139,8 @@ public class Register extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         Toast.makeText(Register.this, "User Register successfully", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(Register.this, SignIn.class);
+                                        startActivity(intent);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                             @Override

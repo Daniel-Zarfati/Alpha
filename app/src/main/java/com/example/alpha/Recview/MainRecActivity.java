@@ -21,7 +21,6 @@ public class MainRecActivity extends AppCompatActivity {
     Myadapter adapter;
     FloatingActionButton fb;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -3,7 +3,8 @@ package com.example.alpha;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.alpha.Events.RegisterEvent;
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
 import com.example.alpha.FragmentsClasses.SalaryFragment;
@@ -30,7 +30,7 @@ public class Home extends AppCompatActivity {
 
     TextView txtName;
     BottomNavigationView bottomBar;
-    Button btn2;
+    ImageButton editProfile,logOut;
 
     private CircleImageView profileImageView;
     private DatabaseReference databaseReference;
@@ -45,7 +45,8 @@ public class Home extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        btn2 = findViewById(R.id.btn2);
+        editProfile = findViewById(R.id.btnEditProfile);
+        logOut = findViewById(R.id.btnLogout);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new MyEventsFragment()).commit();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
@@ -63,22 +64,32 @@ public class Home extends AppCompatActivity {
 
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
+
                     case R.id.MyEvents:
-                        selectedFragment = new MyEventsFragment();
-                        Toast.makeText(Home.this, "My Events.", Toast.LENGTH_SHORT).show();
+                        if(GlobalVar.currentUser.isManager()){
+                            selectedFragment = new FutureEventsFragment();
+                        }else{
+                            selectedFragment = new MyEventsFragment();
+                        }
+
                         break;
+
                     case R.id.Events:
                         selectedFragment = new FutureEventsFragment();
+                        //startActivity(new Intent(Home.this, MainRecActivity.class));
                         Toast.makeText(Home.this, "Events.", Toast.LENGTH_SHORT).show();
                         break;
+
                     case R.id.Salary:
                         selectedFragment = new SalaryFragment();
+                        //startActivity(new Intent(Home.this, MainRecActivity.class));
                         Toast.makeText(Home.this, "Salary.", Toast.LENGTH_SHORT).show();
                         break;
+
                     case R.id.LogOut:
-                        //Toast.makeText(Home.this, "Logout.", Toast.LENGTH_LONG).show();
-                        //FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(Home.this, RegisterEvent.class));
+                        Toast.makeText(Home.this, "Logout.", Toast.LENGTH_LONG).show();
+//                        FirebaseAuth.getInstance().signOut();
+//                        startActivity(new Intent(Home.this, SignIn.class));
                         break;
                 }
                 //displaying the fragments
@@ -89,7 +100,15 @@ public class Home extends AppCompatActivity {
         });
 
 
-        btn2.setOnClickListener((v) -> {
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent profile = new Intent(Home.this, SignIn.class);
+                startActivity(profile);
+            }
+        });
+        editProfile.setOnClickListener((v) -> {
             Intent profile = new Intent(Home.this, EditProfile.class);
             startActivity(profile);
         });

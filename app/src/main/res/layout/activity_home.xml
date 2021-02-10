@@ -37,7 +37,7 @@
                     android:textColor="@color/white"
                     android:fontFamily="@font/nonitofont"
                     android:layout_height="wrap_content"
-                    android:text="Not daniel"/>
+                    android:text="User name"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,18 +46,34 @@
                     android:layout_height="wrap_content"
                     android:text="Welcome back!"/>
 
-                <Button
-                    android:id="@+id/btn2"
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    >
+                <ImageButton
+                    android:id="@+id/btnEditProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Edit"
-                    />
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_mode_edit_24"
+                    android:text="Edit" />
+
+                <ImageButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_baseline_logout_24"
+                    android:layout_weight="1"
+                    android:text="Logout" />
 
 
 
             </LinearLayout>
 
-
+            </LinearLayout>
 
         </LinearLayout>
 

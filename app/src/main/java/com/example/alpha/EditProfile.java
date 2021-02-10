@@ -85,7 +85,7 @@ public class EditProfile extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EditProfile.this, "data being save", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfile.this, "Data saved", Toast.LENGTH_SHORT).show();
                 validateAndsave();
             }
         });
@@ -229,7 +229,7 @@ public class EditProfile extends AppCompatActivity {
         }
         else{
             progressDialog.dismiss();
-            Toast.makeText(this, "Image not selected", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Image not selected", Toast.LENGTH_SHORT).show();
         }
     }
 

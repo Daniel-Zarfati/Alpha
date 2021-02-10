@@ -13,26 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Alpha">
-        <activity android:name=".Events.RegisterEvent"></activity>
+        <activity android:name=".SignInManager">
+
+        </activity>
+        <activity android:name=".Recview.MainRecUserActivity"></activity>
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".Events.RegisterEvent">
+
+        </activity>
         <activity android:name=".Recview.MainRecActivity">
+
+        </activity>
+        <activity android:name=".EditProfile" />
+        <activity android:name=".SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditProfile" />
-        <activity android:name=".SignIn"></activity>
         <activity android:name=".Register" />
         <activity android:name=".Menu" />
         <activity android:name=".Home" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

@@ -10,14 +10,6 @@
     tools:context=".Register">
 
 
-
-    <ImageView
-        android:id="@+id/ProfileImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="fitXY"
-        android:clickable="true"
-        android:layout_marginTop="40dp" />
     <!--        android:background="@drawable/uploadimagelogocolors"-->
 
 
@@ -33,16 +25,7 @@
         android:textColor="#FFFFFF"
         android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/browseimage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorAccent"
-        android:fontFamily="sans-serif"
-        android:text="Upload Profile Pic"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        app:backgroundTint="#000000" />
+
 
     <EditText
         android:id="@+id/edtName"
