@@ -55,6 +55,4 @@ public class FutureEventsFragment extends Fragment {
         adapter.stopListening();
     }
 
-
-
 }

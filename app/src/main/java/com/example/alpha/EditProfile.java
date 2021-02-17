@@ -2,10 +2,12 @@ package com.example.alpha;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,7 +42,7 @@ public class EditProfile extends AppCompatActivity {
     private Button closeButton, saveButton;
     private TextView profileChangeBtn;
     private EditText edtName,edtIdNumber,edtPhoneNumber,edtCity;
-   // private CheckBox cbGardId;
+    private SwitchCompat switchID;
 
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
@@ -49,6 +52,10 @@ public class EditProfile extends AppCompatActivity {
     private StorageTask uploadTask;
     private StorageReference storageProfilePicRef;
 
+    private CheckBox cbGardId;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String CHECKBOX = "checkbox";
+    private boolean checkBoxOnOff;
 
 
     @Override
@@ -61,17 +68,24 @@ public class EditProfile extends AppCompatActivity {
         storageProfilePicRef = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
         profileImageView = findViewById(R.id.profile_image);
-
-        closeButton = findViewById(R.id.btnClose);
-        saveButton = findViewById(R.id.btnSave);
-
         profileChangeBtn = findViewById(R.id.change_profile_btn);
 
         edtName = findViewById(R.id.newName);
         edtIdNumber = findViewById(R.id.newIdNumber);
         edtPhoneNumber = findViewById(R.id.newPhoneNumber);
         edtCity = findViewById(R.id.newCity);
-        //cbGardId = findViewById(R.id.newGardId);
+        cbGardId = (CheckBox)findViewById(R.id.newGardId);
+
+        closeButton = findViewById(R.id.btnClose);
+        saveButton = findViewById(R.id.btnSave);
+
+
+        switchID = (SwitchCompat)findViewById(R.id.SwitchGardid);
+//        SharedPreferences sharedPreferences = getSharedPreferences("SAVEID",MODE_PRIVATE);
+//        switchID.setChecked(sharedPreferences.getBoolean("value",false));
+
+
+
 
 
         closeButton.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +112,8 @@ public class EditProfile extends AppCompatActivity {
         });
 
         getUserinfo();
+        loadData();
+        updateViews();
 
     }
 
@@ -126,20 +142,69 @@ public class EditProfile extends AppCompatActivity {
             return;
         }
 
+
         else{
+//            if(cbGardId.isChecked()){
+//                saveData();
+//                databaseReference.child(mAuth.getCurrentUser().getUid()).child("gardId").setValue(true);
+//            }
+
             HashMap<String,Object> userMap = new HashMap<>();
             userMap.put("name",edtName.getText().toString());
             userMap.put("idNumber",edtIdNumber.getText().toString());
             userMap.put("phoneNumber",edtPhoneNumber.getText().toString());
             userMap.put("city",edtCity.getText().toString());
-//            if(cbGardId.isChecked()) {
-//                userMap.put("gardId", true);
-//            }
+
             databaseReference.child(mAuth.getCurrentUser().getUid()).updateChildren(userMap);
             uploadProfileImage();
 
+
+
+//            switchID.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    if(switchID.isChecked()){
+//                        SharedPreferences.Editor editor = getSharedPreferences("SAVEID",MODE_PRIVATE).edit();
+//                        editor.putBoolean("value",true);
+//                        editor.apply();
+//                        switchID.setChecked(true);
+//                        databaseReference.child(mAuth.getCurrentUser().getUid()).child("gardId").setValue(true);
+//
+//                    }else{
+//                        SharedPreferences.Editor editor = getSharedPreferences("SAVEID",MODE_PRIVATE).edit();
+//                        editor.putBoolean("value",false);
+//                        editor.apply();
+//                        switchID.setChecked(true);
+//                        databaseReference.child(mAuth.getCurrentUser().getUid()).child("gardId").setValue(false);
+//                    }
+//                }
+//            });
+
+
         }
     }
+
+
+    public void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(CHECKBOX,cbGardId.isChecked());
+
+        editor.apply();
+        Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        checkBoxOnOff = sharedPreferences.getBoolean(CHECKBOX,false); // if nothing saved will be off
+    }
+    public void updateViews(){
+        cbGardId.setChecked(checkBoxOnOff);
+        databaseReference.child(mAuth.getCurrentUser().getUid()).child("gardId").setValue(true);
+
+
+    }
+
 
     private void getUserinfo() {
         databaseReference.child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {

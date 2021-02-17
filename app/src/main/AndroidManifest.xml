@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,24 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Alpha">
-        <activity android:name=".SignInManager">
+
+
+
+        <activity android:name=".View.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
-        <activity android:name=".Recview.MainRecUserActivity"></activity>
+        <activity android:name=".SignInManager"></activity>
+        <activity android:name=".Recview.MainRecUserActivity" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".Events.RegisterEvent">
 
         </activity>
-        <activity android:name=".Recview.MainRecActivity">
-
-        </activity>
+        <activity android:name=".Recview.MainRecActivity"></activity>
         <activity android:name=".EditProfile" />
         <activity android:name=".SignIn">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
+        <activity android:name=".View.SinglerowExpend">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
+
         </activity>
         <activity android:name=".Register" />
         <activity android:name=".Menu" />

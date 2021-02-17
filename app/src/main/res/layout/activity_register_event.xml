@@ -2,15 +2,16 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:elevation="8dp"
+    android:background="@color/alphablack"
     tools:context=".Events.RegisterEvent">
 
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/alphablack"
     android:padding="15dp" >
 
 <!--    <ImageView-->
@@ -21,11 +22,12 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/TakingPlace_img"
+        android:layout_centerHorizontal="true"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/uploadimagelogo"
-        app:civ_border_color="@color/design_default_color_primary"
+        app:civ_border_color="@color/alphablue"
         app:civ_border_width="2dp"/>
 
 
@@ -33,10 +35,12 @@
         android:id="@+id/Et_TakingPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/TakingPlace_img"
+        android:layout_marginLeft="2dp"
+        android:layout_below="@id/TakingPlace_img"
         android:hint="Location:"
-        android:textColor="#000"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -46,11 +50,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_TakingPlace"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/TakingPlace_img"
+        android:layout_marginLeft="6dp"
         android:hint="Date:"
-        android:textColor="#000"
         android:textSize="25sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:ems="10"
         android:inputType="date"/>
 
@@ -59,10 +63,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_Date"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/TakingPlace_img"
+        android:layout_marginLeft="6dp"
         android:hint="Left positions:"
-        android:textColor="#000"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25sp" />
 
     <EditText
@@ -70,10 +74,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_Availability"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/TakingPlace_img"
+        android:layout_marginLeft="6dp"
         android:hint="Start hour:"
-        android:textColor="#000"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25sp" />
 
     <EditText
@@ -81,10 +85,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_StartHour"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/TakingPlace_img"
+        android:layout_marginLeft="6dp"
         android:hint="End hour"
-        android:textColor="#000"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25sp" />
 
     <EditText
@@ -92,10 +96,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_EndHour"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/TakingPlace_img"
+        android:layout_marginLeft="6dp"
         android:hint="Salary:"
-        android:textColor="#000"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25sp" />
 
     <Button
@@ -103,29 +107,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_EventSalary"
-        android:layout_toRightOf="@id/TakingPlace_img"
         android:text="Select Img"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/alphablue"/>
 
     <Button
         android:id="@+id/btn_uploadEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_select_Imgae"
-        android:layout_toRightOf="@id/TakingPlace_img"
         android:text="Upload"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:backgroundTint="@color/alphablue"
+        android:layout_centerHorizontal="true"
+        />
 
     <ProgressBar
         android:id="@+id/PB_progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:indeterminate="true"
-        android:visibility="invisible"
         android:layout_below="@id/btn_uploadEvent"
-        android:layout_toRightOf="@id/TakingPlace_img"
-        />
+        android:layout_alignParentStart="true"
+        android:indeterminate="true"
+        android:visibility="invisible" />
 
 </RelativeLayout>
 

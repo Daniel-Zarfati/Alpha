@@ -15,9 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.alpha.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -36,6 +38,9 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+//        RegisterEventFragment registerEventFragment = new RegisterEventFragment();
+//        getSupportFragmentManager().beginTransaction().add()
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -121,7 +126,20 @@ public class Register extends AppCompatActivity {
 
                     if(task.isSuccessful())
                     {
-                        //Toast.makeText(Register.this, "User Registered successfully", Toast.LENGTH_SHORT).show();
+
+                       FirebaseUser firebaseUser =  mAuth.getCurrentUser();
+                       firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                           @Override
+                           public void onSuccess(Void aVoid) {
+                               Toast.makeText(Register.this, "Verification Email has been sent.", Toast.LENGTH_LONG).show();
+                           }
+                       }).addOnFailureListener(new OnFailureListener() {
+                           @Override
+                           public void onFailure(@NonNull Exception e) {
+                               Toast.makeText(Register.this, "Fail, Email not sent.", Toast.LENGTH_LONG).show();
+                           }
+                       });
+
 
                         //Save to db
 
@@ -151,6 +169,7 @@ public class Register extends AppCompatActivity {
                         });
 
                     }
+                    //Toast.makeText(Register.this, "Something is wrong, Try again", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             });

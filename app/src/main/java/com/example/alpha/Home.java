@@ -6,13 +6,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
+import com.example.alpha.FragmentsClasses.ManagerEventFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
 import com.example.alpha.FragmentsClasses.SalaryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -49,6 +49,7 @@ public class Home extends AppCompatActivity {
         logOut = findViewById(R.id.btnLogout);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new MyEventsFragment()).commit();
+
         databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
 
         profileImageView = findViewById(R.id.dp);
@@ -66,30 +67,23 @@ public class Home extends AppCompatActivity {
                 switch (item.getItemId()) {
 
                     case R.id.MyEvents:
-                        if(GlobalVar.currentUser.isManager()){
-                            selectedFragment = new FutureEventsFragment();
-                        }else{
-                            selectedFragment = new MyEventsFragment();
-                        }
-
+                        selectedFragment = new MyEventsFragment();  // BOOKED AND UN BOOK
                         break;
 
                     case R.id.Events:
-                        selectedFragment = new FutureEventsFragment();
-                        //startActivity(new Intent(Home.this, MainRecActivity.class));
-                        Toast.makeText(Home.this, "Events.", Toast.LENGTH_SHORT).show();
+                        selectedFragment = new FutureEventsFragment();  // ALL EVENTS WITH ONLY BOOK OPTION
                         break;
 
                     case R.id.Salary:
                         selectedFragment = new SalaryFragment();
-                        //startActivity(new Intent(Home.this, MainRecActivity.class));
-                        Toast.makeText(Home.this, "Salary.", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.LogOut:
-                        Toast.makeText(Home.this, "Logout.", Toast.LENGTH_LONG).show();
-//                        FirebaseAuth.getInstance().signOut();
-//                        startActivity(new Intent(Home.this, SignIn.class));
+                      if(GlobalVar.currentUser.isManager()) {
+                        selectedFragment = new ManagerEventFragment();
+                      }else {
+                        selectedFragment = new SalaryFragment();
+                      }
                         break;
                 }
                 //displaying the fragments

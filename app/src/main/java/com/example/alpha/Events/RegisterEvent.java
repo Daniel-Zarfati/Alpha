@@ -31,15 +31,14 @@ import com.theartofdev.edmodo.cropper.CropImage;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RegisterEvent extends AppCompatActivity {   // Adding img to firebase not working
+public  class RegisterEvent extends AppCompatActivity {   // Adding img to firebase not working
 
-    //private FirebaseAuth mAuth;
     FirebaseDatabase db;
     DatabaseReference dbRef;
 
-    Button btnSelectImage;
+
     EditText edtLocation, edtDate, edtAvailibility, edtStartHour, edtEndHour, edtSalary;
-    Button btnRegisterEvent;
+    Button btnSelectImage,btnRegisterEvent;
     ProgressDialog loadingBar;
 
 
@@ -84,7 +83,6 @@ public class RegisterEvent extends AppCompatActivity {   // Adding img to fireba
         edtStartHour = findViewById(R.id.Et_StartHour);
         edtEndHour = findViewById(R.id.Et_EndHour);
         edtSalary = findViewById(R.id.Et_EventSalary);
-
 
 
         btnRegisterEvent = findViewById(R.id.btn_uploadEvent);
@@ -145,7 +143,6 @@ public class RegisterEvent extends AppCompatActivity {   // Adding img to fireba
             return;
         }
 
-
         else{
 
             loadingBar.setTitle("Registration");
@@ -160,14 +157,17 @@ public class RegisterEvent extends AppCompatActivity {   // Adding img to fireba
 
                     event.setLocation(edtLocation.getText().toString());
                     event.setDate(edtDate.getText().toString());
-                    //event.setAvailability(Integer.parseInt(edtAvailibility.getText().toString()));
                     event.setAvailability(edtAvailibility.getText().toString());
                     event.setStartHour(edtStartHour.getText().toString());
                     event.setEndHour(edtEndHour.getText().toString());
                     event.setEventSalary(edtSalary.getText().toString());
+                    //event.setAvailability(Integer.parseInt(edtAvailibility.getText().toString()));  // Convert to int ?
 
+                    // ERORR EVENT IS REGISTER BEFOR PHOTO IS UPLOADED
                     uploadEventImage();
-                    dbRef.push().setValue(event);
+                    String eventId = dbRef.push().getKey();
+                    event.setEventUid(eventId);
+                    dbRef.child(eventId).setValue(event);
                     loadingBar.dismiss();
 
 
@@ -185,9 +185,6 @@ public class RegisterEvent extends AppCompatActivity {   // Adding img to fireba
 //
 //                        }
 //                    });
-
-
-
 
 
                 }
@@ -265,6 +262,8 @@ public class RegisterEvent extends AppCompatActivity {   // Adding img to fireba
                             Uri downloadUrl = task.getResult();
                             myUri = downloadUrl.toString();
 
+                            Picasso.get().load(myUri).into(eventImageView);
+
 //                            HashMap<String , Object> EventMap = new HashMap<>();
 //                            EventMap.put("image",myUri);
 //
@@ -277,7 +276,7 @@ public class RegisterEvent extends AppCompatActivity {   // Adding img to fireba
 
 
                             //databaseReference.child(mAuth.getCurrentUser().getUid()).setValue(myUri);
-                            databaseReference.child(mAuth.getCurrentUser().getUid()).setValue(myUri);
+                            databaseReference.child("Event").child(mAuth.getCurrentUser().getUid()).setValue(myUri);
 //                            databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(myUri);
                             progressDialog.dismiss();
 

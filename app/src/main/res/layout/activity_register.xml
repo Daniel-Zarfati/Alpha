@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#262434"
+    android:background="@color/alphablack"
     tools:context=".Register">
 
 
@@ -115,12 +115,11 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#CDD1D7"
         android:fontFamily="sans-serif"
         android:text="Register"
-        android:textColor="@android:color/white"
         android:textColorLink="#CDD1D7"
         android:textSize="15sp"
-        app:backgroundTint="#CDD1D7" />
+        android:textColor="@color/white"
+        android:backgroundTint="@color/alphablue" />
 </LinearLayout>
 

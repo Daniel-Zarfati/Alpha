@@ -27,9 +27,7 @@ public class SignInManager extends AppCompatActivity {
 
     EditText editEmailM, editPasswordM,editPinCode;
     ImageView ivSignIn,Security;
-
     DatabaseReference databaseref;
-
     private FirebaseAuth MAuth;
     ProgressDialog loadingBar;
 
@@ -76,12 +74,6 @@ public class SignInManager extends AppCompatActivity {
             editPasswordM.requestFocus();
             return;
         }
-
-//        if(!pinCode.equals(databaseref.g)){
-//            editPinCode.setError("Pin Code isn't match!");
-//            editPinCode.requestFocus();
-//            return;
-//        }
 
         if(!pinCode.equals("307839035")) {
             editPinCode.setError("Pin Code isn't match!");

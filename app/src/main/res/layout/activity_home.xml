@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#262434"
+    android:background="@color/alphablack"
 
     tools:context=".Home">
 
@@ -21,8 +21,11 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/design_default_color_primary"
+                app:civ_border_color="@color/alphablue"
+                android:backgroundTint="@color/alphablue"
                 android:background="@drawable/avatarcirclegray"/>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,8 +90,8 @@
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="481dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="520dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="0dp" />
 
     </LinearLayout>
@@ -108,7 +111,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="35dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
 
             android:background="@drawable/bg"
             app:elevation="2dp"
@@ -124,29 +127,3 @@
 
 </RelativeLayout>
 
-
-
-<!--<LinearLayout-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent">-->
-
-<!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--    android:id="@+id/bottomBar"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="58dp"-->
-<!--    android:layout_gravity="bottom"-->
-
-<!--    android:layout_marginLeft="35dp"-->
-<!--    android:layout_marginTop="30dp"-->
-<!--    android:layout_marginRight="35dp"-->
-<!--    android:layout_marginBottom="24dp"-->
-
-<!--    android:background="@drawable/bg"-->
-<!--    app:elevation="2dp"-->
-<!--    app:itemIconSize="26dp"-->
-<!--    app:itemIconTint="@drawable/item_selector"-->
-<!--    app:itemRippleColor="@android:color/transparent"-->
-<!--    app:labelVisibilityMode="unlabeled"-->
-<!--    app:menu="@menu/menu_items" />-->
-
-<!--</LinearLayout>-->
