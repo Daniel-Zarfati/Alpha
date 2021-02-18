@@ -202,7 +202,6 @@ public class EditProfile extends AppCompatActivity {
         cbGardId.setChecked(checkBoxOnOff);
         databaseReference.child(mAuth.getCurrentUser().getUid()).child("gardId").setValue(true);
 
-
     }
 
 

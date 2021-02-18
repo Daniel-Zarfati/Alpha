@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
-import com.example.alpha.FragmentsClasses.ManagerEventFragment;
+import com.example.alpha.FragmentsClasses.ManagerOptionsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
 import com.example.alpha.FragmentsClasses.SalaryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -80,7 +80,7 @@ public class Home extends AppCompatActivity {
 
                     case R.id.LogOut:
                       if(GlobalVar.currentUser.isManager()) {
-                        selectedFragment = new ManagerEventFragment();
+                        selectedFragment = new ManagerOptionsFragment();
                       }else {
                         selectedFragment = new SalaryFragment();
                       }

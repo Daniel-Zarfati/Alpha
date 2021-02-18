@@ -30,6 +30,7 @@ public class Register extends AppCompatActivity {
     DatabaseReference dbRef;
 
     EditText editName,editIdNumber,editPhoneNumber,editCity,editEmail,editPassword;
+
     Button btnRegister;
 
     ProgressDialog loadingBar;
@@ -66,8 +67,10 @@ public class Register extends AppCompatActivity {
             String email = editEmail.getText().toString().trim();
             String pass = editPassword.getText().toString().trim();
 
+            String userSalary = "0";
 
-            RegisterUser(name,Idnumber,Phonenumber,City,email,pass);
+
+            RegisterUser(name,Idnumber,Phonenumber,City,email,pass,userSalary);
         }
     });
 
@@ -75,7 +78,7 @@ public class Register extends AppCompatActivity {
 
 }
 
-    private void RegisterUser(String name, String Idnumber,String Phonenumber,String City,String email,String pass) {
+    private void RegisterUser(String name, String Idnumber,String Phonenumber,String City,String email,String pass,String userSalary) {
 
         if(name.isEmpty()){
             editName.setError("Full Name is required!");
@@ -126,7 +129,6 @@ public class Register extends AppCompatActivity {
 
                     if(task.isSuccessful())
                     {
-
                        FirebaseUser firebaseUser =  mAuth.getCurrentUser();
                        firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                            @Override
@@ -151,6 +153,8 @@ public class Register extends AppCompatActivity {
                         user.setPhoneNumber(editPhoneNumber.getText().toString());
                         user.setPassword(editPassword.getText().toString());
                         user.setEmail(editEmail.getText().toString());
+
+                        user.setSalary("0");
 
                         dbRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
