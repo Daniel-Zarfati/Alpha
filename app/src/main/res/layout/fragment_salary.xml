@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/alphablack"
     android:orientation="vertical">
 
 
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_EndHour"
         android:layout_marginLeft="6dp"
+        android:layout_marginTop="150dp"
         android:text="This is your salary:"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -23,7 +24,9 @@
         android:id="@+id/Et_UserSalary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="6dp"
+        android:gravity="center_horizontal"
         android:hint="Salary:"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

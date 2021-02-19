@@ -40,8 +40,6 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-//        RegisterEventFragment registerEventFragment = new RegisterEventFragment();
-//        getSupportFragmentManager().beginTransaction().add()
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -153,7 +151,6 @@ public class Register extends AppCompatActivity {
                         user.setPhoneNumber(editPhoneNumber.getText().toString());
                         user.setPassword(editPassword.getText().toString());
                         user.setEmail(editEmail.getText().toString());
-
                         user.setSalary("0");
 
                         dbRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
@@ -168,10 +165,8 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(Register.this, "Failed to register", Toast.LENGTH_SHORT).show();
-
                             }
                         });
-
                     }
                     //Toast.makeText(Register.this, "Something is wrong, Try again", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
@@ -180,10 +175,6 @@ public class Register extends AppCompatActivity {
         }
 
     }
-
-
-
-
 }
 
 

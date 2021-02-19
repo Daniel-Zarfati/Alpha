@@ -86,58 +86,45 @@ public  class RegisterEvent extends AppCompatActivity {   // Adding img to fireb
 
 
         btnRegisterEvent = findViewById(R.id.btn_uploadEvent);
-        btnRegisterEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String location = edtLocation.getText().toString();
-                String date = edtDate.getText().toString();
-                String availibility = edtAvailibility.getText().toString();
-                String startHour = edtStartHour.getText().toString();
-                String endHour = edtEndHour.getText().toString();
-                String salary = edtSalary.getText().toString();
 
-                registerEvent(location,date,availibility,startHour,endHour,salary);
-            }
-        });
-
-
+        registerEvent();
         getEventInfo();
 
     }
 
-    private void registerEvent(String location, String date, String availibility, String startHour, String endHour, String salary) {
+    private void registerEvent() {
 
-        if(location.isEmpty()){
+        if(edtLocation.getText().toString().isEmpty()){
             this.edtLocation.setError("Location is required!");
             this.edtLocation.requestFocus();
             return;
         }
 
-        if(date.isEmpty()){
+        if(edtDate.getText().toString().isEmpty()){
             this.edtDate.setError("Date is required!");
             this.edtDate.requestFocus();
             return;
         }
 
-        if(availibility.isEmpty()){
-            this.edtAvailibility.setError("Availibility is required!");
+        if(edtAvailibility.getText().toString().isEmpty()){
+            this.edtAvailibility.setError("Availability is required!");
             this.edtAvailibility.requestFocus();
             return;
         }
 
-        if(startHour.isEmpty()){
+        if(edtStartHour.getText().toString().isEmpty()){
             this.edtStartHour.setError("StartHour is required!");
             this.edtStartHour.requestFocus();
             return;
         }
 
-        if(endHour.isEmpty()){
+        if(edtEndHour.getText().toString().isEmpty()){
             this.edtEndHour.setError("EndHour is required!");
             this.edtEndHour.requestFocus();
             return;
         }
 
-        if(salary.isEmpty()){
+        if(edtSalary.getText().toString().isEmpty()){
             this.edtSalary.setError("Salary is required!");
             this.edtSalary.requestFocus();
             return;

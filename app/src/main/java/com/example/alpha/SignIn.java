@@ -124,13 +124,18 @@ public class SignIn extends AppCompatActivity {
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
+                                        Toast.makeText(SignIn.this, "Sign in failed", Toast.LENGTH_LONG).show();
+                                        Intent home = new Intent(SignIn.this,SignIn.class);
+                                        startActivity(home);
 
                                     }
                                 });
                     }
                     else{
-                        Toast.makeText(SignIn.this, "Sign in failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignIn.this, "Sign in failed", Toast.LENGTH_LONG).show();
                         loadingBar.dismiss();
+                        Intent home = new Intent(SignIn.this,SignIn.class);
+                        startActivity(home);
                     }
                 }
             });

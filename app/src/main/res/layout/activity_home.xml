@@ -38,6 +38,7 @@
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:fontFamily="@font/nonitofont"
                     android:layout_height="wrap_content"
                     android:text="User name"/>
@@ -60,17 +61,19 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/alphablue"
                     android:src="@drawable/ic_baseline_mode_edit_24"
                     android:text="Edit" />
 
-                <ImageButton
-                    android:id="@+id/btnLogout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:src="@drawable/ic_baseline_logout_24"
-                    android:layout_weight="1"
-                    android:text="Logout" />
+                    <ImageButton
+                        android:id="@+id/btnLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/alphablue"
+                        android:src="@drawable/ic_baseline_logout_24"
+                        android:text="Logout" />
 
 
 
@@ -107,17 +110,15 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:layout_gravity="bottom"
-
             android:layout_marginLeft="35dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="35dp"
             android:layout_marginBottom="16dp"
-
             android:background="@drawable/bg"
             app:elevation="2dp"
             app:itemIconSize="26dp"
             app:itemIconTint="@drawable/item_selector"
-            app:itemRippleColor="@android:color/transparent"
+            app:itemRippleColor="@color/alphablue"
             app:labelVisibilityMode="unlabeled"
              />
 

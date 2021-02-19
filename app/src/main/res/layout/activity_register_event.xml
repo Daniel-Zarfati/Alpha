@@ -22,23 +22,24 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/TakingPlace_img"
-        android:layout_centerHorizontal="true"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:src="@drawable/uploadimagelogo"
         app:civ_border_color="@color/alphablue"
-        app:civ_border_width="2dp"/>
+        app:civ_border_width="2dp" />
 
 
     <EditText
         android:id="@+id/Et_TakingPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/TakingPlace_img"
         android:hint="Location:"
-        android:layout_marginTop="30dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="25sp"
@@ -107,32 +108,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Et_EventSalary"
-        android:text="Select Img"
-        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/alphablue"/>
+        android:layout_marginTop="42dp"
+        android:backgroundTint="@color/alphablue"
+        android:text="Select Img"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btn_uploadEvent"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_select_Imgae"
-        android:text="Upload"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/alphablue"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/alphablue"
+        android:text="Upload"
+        android:textColor="@color/white" />
 
-    <ProgressBar
-        android:id="@+id/PB_progressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_uploadEvent"
-        android:layout_alignParentStart="true"
-        android:indeterminate="true"
-        android:visibility="invisible" />
+<!--    <ProgressBar-->
+<!--        android:id="@+id/PB_progressBar"-->
+<!--        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/btn_uploadEvent"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="14dp"-->
+<!--        android:layout_marginTop="66dp"-->
+<!--        android:indeterminate="true"-->
+<!--        android:visibility="invisible" />-->
 
 </RelativeLayout>
 

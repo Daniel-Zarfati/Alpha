@@ -22,9 +22,8 @@
         android:text="Welcome to TQS"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/alphablue"
         android:textSize="25sp" />
-
 
 
     <EditText
@@ -32,7 +31,9 @@
         style="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:hint="Name"
@@ -44,7 +45,9 @@
         android:id="@+id/edtIDnumber"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:hint="IDnumber"
@@ -57,7 +60,9 @@
         style="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:hint="Phone Number"
@@ -70,7 +75,9 @@
         style="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:hint="City"
@@ -82,7 +89,9 @@
         android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:hint="Email"
@@ -94,7 +103,9 @@
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:hint="Password"
@@ -121,5 +132,6 @@
         android:textSize="15sp"
         android:textColor="@color/white"
         android:backgroundTint="@color/alphablue" />
+
 </LinearLayout>
 

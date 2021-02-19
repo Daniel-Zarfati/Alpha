@@ -134,27 +134,6 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
-
-//    private void SaveIntoSharedPrefs(String key,boolean value){
-//
-//        SharedPreferences sp = getSharedPreferences("GARD_ID",MODE_PRIVATE); // create the SharedPreferences
-//        SharedPreferences.Editor editor = sp.edit();
-//        editor.putBoolean(key,value);
-//        editor.apply();
-//    }
-//
-//    // retrit the value
-//    private boolean Upadte(String key){
-//       SharedPreferences sp = getSharedPreferences("GARD_ID",MODE_PRIVATE);
-//       return sp.getBoolean(key,false);
-//    }
-
-
-
-
-
-
-
     private void validateAndsave() {
         if(edtName.getText().toString().isEmpty()){
             edtCity.setError("Full Name is required!");
