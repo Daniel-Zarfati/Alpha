@@ -112,7 +112,7 @@ tools:context=".SignInManager">
                 android:layout_gravity="left"
                 android:layout_marginTop="37dp"
                 android:text="Pin code"
-                android:textColor="@android:color/white"
+                android:textColor="@color/alphablue"
                 android:textSize="20sp" />
 
 

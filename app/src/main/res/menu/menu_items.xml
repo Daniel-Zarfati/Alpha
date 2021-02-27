@@ -8,7 +8,7 @@
 
     <item android:id="@+id/Events"
         android:icon="@drawable/ic_baseline_event_24"
-        android:title="Events"/>
+        android:title="All Events"/>
 
     <item android:id="@+id/Salary"
         android:icon="@drawable/ic_baseline_attach_money_24"
@@ -16,6 +16,6 @@
 
     <item android:id="@+id/LogOut"
         android:icon="@drawable/ic_baseline_logout_24"
-        android:title="Log out"/>
+        android:title="More"/>
 
 </menu>

@@ -21,19 +21,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_weight="1"-->
-<!--        android:text="Futrue Events"-->
-<!--        android:textSize="30dp" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/goToRegisterEvents"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_weight="1"-->
-<!--        android:text="goToRegisterEvents"-->
-<!--        />-->
 </LinearLayout>

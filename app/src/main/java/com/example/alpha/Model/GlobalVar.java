@@ -1,6 +1,4 @@
-package com.example.alpha;
-
-import com.example.alpha.Model.User;
+package com.example.alpha.Model;
 
 public class GlobalVar {
 

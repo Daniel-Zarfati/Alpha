@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
-import com.example.alpha.FragmentsClasses.ManagerOptionsFragment;
+import com.example.alpha.FragmentsClasses.ManagerCircleOptionsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
 import com.example.alpha.FragmentsClasses.SalaryFragment;
+import com.example.alpha.Model.GlobalVar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +36,6 @@ public class Home extends AppCompatActivity {
     private CircleImageView profileImageView;
     private DatabaseReference databaseReference;
     FirebaseAuth mAuth;
-
 
 
     @Override
@@ -80,14 +80,17 @@ public class Home extends AppCompatActivity {
 
                     case R.id.LogOut:
                       if(GlobalVar.currentUser.isManager()) {
-                        selectedFragment = new ManagerOptionsFragment();
+                          selectedFragment = new ManagerCircleOptionsFragment();
+                        //selectedFragment = new ManagerOptionsFragment();
                       }else {
                         selectedFragment = new SalaryFragment();
                       }
                         break;
                 }
+
                 //displaying the fragments
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, selectedFragment).commit();
+                //getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in_center,R.anim.fade_out_center).replace(R.id.container, selectedFragment).commit();
 
                 return true;
             }

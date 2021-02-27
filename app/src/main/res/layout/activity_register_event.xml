@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="6dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@id/TakingPlace_img"
         android:hint="Location:"
         android:textColor="@color/white"
@@ -118,24 +118,14 @@
         android:id="@+id/btn_uploadEvent"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_select_Imgae"
+        android:layout_below="@id/Et_EventSalary"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/alphablue"
         android:text="Upload"
         android:textColor="@color/white" />
 
-<!--    <ProgressBar-->
-<!--        android:id="@+id/PB_progressBar"-->
-<!--        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/btn_uploadEvent"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_marginStart="14dp"-->
-<!--        android:layout_marginTop="66dp"-->
-<!--        android:indeterminate="true"-->
-<!--        android:visibility="invisible" />-->
+
 
 </RelativeLayout>
 

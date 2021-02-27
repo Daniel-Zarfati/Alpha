@@ -84,6 +84,7 @@ public class EditProfile extends AppCompatActivity {
         switchGard = findViewById(R.id.SwitchGardid);
         myPreferences = getSharedPreferences(MY_PREFS,MODE_PRIVATE);
         myEditor = getSharedPreferences(MY_PREFS,MODE_PRIVATE).edit();
+        
         switch_status = myPreferences.getBoolean(SWITCH_STATUS,false);
         switchGard.setChecked(switch_status);
 
