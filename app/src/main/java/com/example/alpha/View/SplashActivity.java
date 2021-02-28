@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.alpha.R;
-import com.example.alpha.SignIn;
+import com.example.alpha.Main.SignIn;
 
 public class SplashActivity extends AppCompatActivity {
 

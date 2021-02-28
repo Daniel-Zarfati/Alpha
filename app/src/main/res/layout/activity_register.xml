@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/alphablack"
-    tools:context=".Register">
+    tools:context=".Main.Register">
 
 
     <!--        android:background="@drawable/uploadimagelogocolors"-->

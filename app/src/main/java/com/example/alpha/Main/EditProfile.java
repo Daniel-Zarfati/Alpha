@@ -1,4 +1,4 @@
-package com.example.alpha;
+package com.example.alpha.Main;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.example.alpha.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

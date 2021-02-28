@@ -1,4 +1,4 @@
-package com.example.alpha;
+package com.example.alpha.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.example.alpha.FragmentsClasses.ManagerCircleOptionsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
 import com.example.alpha.FragmentsClasses.SalaryFragment;
 import com.example.alpha.Model.GlobalVar;
+import com.example.alpha.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

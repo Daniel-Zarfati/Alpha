@@ -1,4 +1,4 @@
-package com.example.alpha;
+package com.example.alpha.Main;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.alpha.Model.GlobalVar;
 import com.example.alpha.Model.User;
+import com.example.alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -50,7 +51,7 @@ public class SignIn extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignIn.this,ForgotPassword.class);
+                Intent intent = new Intent(SignIn.this, ForgotPassword.class);
                 startActivity(intent);
             }
         });
@@ -58,7 +59,7 @@ public class SignIn extends AppCompatActivity {
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignIn.this,Register.class);
+                Intent intent = new Intent(SignIn.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +68,7 @@ public class SignIn extends AppCompatActivity {
         Security.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignIn.this,SignInManager.class);
+                Intent intent = new Intent(SignIn.this, SignInManager.class);
                 startActivity(intent);
             }
         });
@@ -116,7 +117,7 @@ public class SignIn extends AppCompatActivity {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {   // Retriving data from Current user to Gloabl Var to keep and display it
                                         GlobalVar.currentUser = snapshot.getValue(User.class);
 
-                                        Intent home = new Intent(SignIn.this,Home.class);
+                                        Intent home = new Intent(SignIn.this, Home.class);
                                         startActivity(home);
 
                                         Toast.makeText(SignIn.this, "Successfully sign in", Toast.LENGTH_SHORT).show();

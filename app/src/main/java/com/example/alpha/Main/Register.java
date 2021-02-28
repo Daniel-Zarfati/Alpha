@@ -1,4 +1,4 @@
-package com.example.alpha;
+package com.example.alpha.Main;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.alpha.Model.User;
+import com.example.alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

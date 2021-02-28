@@ -20,13 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignInManager" />
-        <activity android:name=".ForgotPassword" />
+        <activity android:name=".Main.SignInManager" />
+        <activity android:name=".Main.ForgotPassword" />
         <activity android:name=".Events.RegisterEvent"></activity>
-        <activity android:name=".EditProfile" />
-        <activity android:name=".SignIn"></activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Home" />
+        <activity android:name=".Main.EditProfile" />
+        <activity android:name=".Main.SignIn"></activity>
+        <activity android:name=".Main.Register" />
+        <activity android:name=".Main.Home" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

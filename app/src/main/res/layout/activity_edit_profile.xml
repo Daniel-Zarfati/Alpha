@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/alphablack"
-    tools:context=".EditProfile">
+    tools:context=".Main.EditProfile">
 
 
     <de.hdodenhof.circleimageview.CircleImageView

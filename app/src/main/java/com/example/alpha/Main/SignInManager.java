@@ -1,4 +1,4 @@
-package com.example.alpha;
+package com.example.alpha.Main;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.alpha.Model.GlobalVar;
 import com.example.alpha.Model.User;
+import com.example.alpha.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -102,7 +103,7 @@ public class SignInManager extends AppCompatActivity {
 
                                         databaseref.child(snapshot.getKey()).child("manager").setValue(true);
 
-                                        Intent home = new Intent(SignInManager.this,Home.class);
+                                        Intent home = new Intent(SignInManager.this, Home.class);
                                         startActivity(home);
 
                                         Toast.makeText(SignInManager.this, "Successfully sign in", Toast.LENGTH_SHORT).show();
