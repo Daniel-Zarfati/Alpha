@@ -15,7 +15,7 @@
         android:title="My Salary"/>
 
     <item android:id="@+id/LogOut"
-        android:icon="@drawable/ic_baseline_logout_24"
+        android:icon="@drawable/ic_baseline_more_horiz_24"
         android:title="More"/>
 
 </menu>

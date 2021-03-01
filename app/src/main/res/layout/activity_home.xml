@@ -26,7 +26,6 @@
                 android:background="@drawable/avatarcirclegray"/>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_marginStart="10dp"

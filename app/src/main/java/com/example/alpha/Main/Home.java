@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.alpha.FragmentsClasses.AllRightsFragment;
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
 import com.example.alpha.FragmentsClasses.ManagerCircleOptionsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
@@ -82,9 +83,8 @@ public class Home extends AppCompatActivity {
                     case R.id.LogOut:
                       if(GlobalVar.currentUser.isManager()) {
                           selectedFragment = new ManagerCircleOptionsFragment();
-                        //selectedFragment = new ManagerOptionsFragment();
                       }else {
-                        selectedFragment = new SalaryFragment();
+                            selectedFragment = new AllRightsFragment();
                       }
                         break;
                 }

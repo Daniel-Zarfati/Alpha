@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:gravity="left"
-                    android:text="login"
+                    android:text="Login"
                     android:textColor="@android:color/white"
                     android:textSize="40dp" />
 
@@ -131,12 +131,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="SignUp"
                     android:clickable="true"
+                    android:text="SignUp"
+                    android:layout_marginTop="40dp"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
-
-
 
 
             </LinearLayout>
@@ -149,7 +148,7 @@
                     android:id="@+id/forgotPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="134dp"
+                    android:layout_marginLeft="128sp"
                     android:layout_marginBottom="10dp"
                     android:layout_gravity="bottom"
                     android:text="forgot Password?"
