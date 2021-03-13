@@ -43,7 +43,6 @@ public class EditProfile extends AppCompatActivity {
     private Button closeButton, saveButton;
     private TextView profileChangeBtn;
     private EditText edtName,edtIdNumber,edtPhoneNumber,edtCity;
-    //private SwitchCompat switchID;
 
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
@@ -266,7 +265,6 @@ public class EditProfile extends AppCompatActivity {
         }
         else{
             progressDialog.dismiss();
-            //Toast.makeText(this, "Image not selected", Toast.LENGTH_SHORT).show();
         }
     }
 

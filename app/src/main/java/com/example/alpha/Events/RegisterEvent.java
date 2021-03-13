@@ -31,7 +31,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public  class RegisterEvent extends AppCompatActivity {   // Adding img to firebase not working
+public  class RegisterEvent extends AppCompatActivity {
 
     FirebaseDatabase db;
     DatabaseReference dbRef;
@@ -148,31 +148,12 @@ public  class RegisterEvent extends AppCompatActivity {   // Adding img to fireb
                     event.setStartHour(edtStartHour.getText().toString());
                     event.setEndHour(edtEndHour.getText().toString());
                     event.setEventSalary(edtSalary.getText().toString());
-                    //event.setAvailability(Integer.parseInt(edtAvailibility.getText().toString()));  // Convert to int ?
 
-                    // ERORR EVENT IS REGISTER BEFOR PHOTO IS UPLOADED
                     uploadEventImage();
                     String eventId = dbRef.push().getKey();
                     event.setEventUid(eventId);
                     dbRef.child(eventId).setValue(event);
                     loadingBar.dismiss();
-
-
-                    //use these to  EDIT specific EVENT!!!!
-//                    dbRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(event)
-//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    Toast.makeText(RegisterEvent.this, "Event Register successfully", Toast.LENGTH_SHORT).show();
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(RegisterEvent.this, "Failed to register", Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                    });
-
 
                 }
             });
@@ -251,20 +232,7 @@ public  class RegisterEvent extends AppCompatActivity {   // Adding img to fireb
 
                             Picasso.get().load(myUri).into(eventImageView);
 
-//                            HashMap<String , Object> EventMap = new HashMap<>();
-//                            EventMap.put("image",myUri);
-//
-//                            databaseReference.child(mAuth.getCurrentUser().getUid()).updateChildren(EventMap);
-//
-//                            progressDialog.dismiss();
-
-//                            String userUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//                            databaseReference.updateChildren(userMap);
-
-
-                            //databaseReference.child(mAuth.getCurrentUser().getUid()).setValue(myUri);
                             databaseReference.child("Event").child(mAuth.getCurrentUser().getUid()).setValue(myUri);
-//                            databaseReference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(myUri);
                             progressDialog.dismiss();
 
                         }

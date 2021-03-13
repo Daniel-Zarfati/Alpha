@@ -169,7 +169,6 @@ public class Register extends AppCompatActivity {
                             }
                         });
                     }
-                    //Toast.makeText(Register.this, "Something is wrong, Try again", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             });

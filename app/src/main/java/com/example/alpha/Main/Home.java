@@ -91,7 +91,6 @@ public class Home extends AppCompatActivity {
 
                 //displaying the fragments
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, selectedFragment).commit();
-                //getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in_center,R.anim.fade_out_center).replace(R.id.container, selectedFragment).commit();
 
                 return true;
             }
