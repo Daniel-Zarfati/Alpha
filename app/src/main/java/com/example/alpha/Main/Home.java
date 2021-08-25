@@ -46,16 +46,11 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         mAuth = FirebaseAuth.getInstance();
-
         editProfile = findViewById(R.id.btnEditProfile);
         logOut = findViewById(R.id.btnLogout);
-
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new MyEventsFragment()).commit();
-
         databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
-
         profileImageView = findViewById(R.id.dp);
-
         txtName = findViewById(R.id.txtName);
         txtName.setText(GlobalVar.currentUser.getName());
 

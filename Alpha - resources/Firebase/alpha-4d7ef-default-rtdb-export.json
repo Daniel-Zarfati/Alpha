@@ -1,0 +1,94 @@
+{
+  "Event" : {
+    "-MT15d4ifQtP8NfIbp1C" : {
+      "availability" : "100",
+      "date" : "12.12.21",
+      "endHour" : "19:00",
+      "eventSalary" : "300",
+      "location" : "Blumfild with photo",
+      "startHour" : "12:00"
+    },
+    "-MT18tVVRFJtBbYPZzfH" : {
+      "availability" : "100",
+      "date" : "30.1.21",
+      "endHour" : "19:00",
+      "eventSalary" : "700",
+      "location" : "BlomfildPhoto",
+      "startHour" : "13:00"
+    },
+    "-MT1BbmEzutb7r7MRQzs" : {
+      "availability" : "129",
+      "date" : "22.10.22",
+      "endHour" : "30:00",
+      "eventSalary" : "450",
+      "location" : "Rishon",
+      "startHour" : "12:00"
+    },
+    "-MT1CfGarjO-dkaMV_pb" : {
+      "availability" : "29292",
+      "date" : "22929",
+      "endHour" : "292921",
+      "eventSalary" : "101011",
+      "location" : "blumfiled",
+      "startHour" : "29292"
+    },
+    "-MT1D76m9yyhMKUMYZer" : {
+      "availability" : "120",
+      "date" : "12.12.21",
+      "endHour" : "18:00",
+      "eventSalary" : "400",
+      "location" : "I love Bezi",
+      "startHour" : "12:00"
+    },
+    "-MT1EAsN9j7fYtKOC4kW" : {
+      "availability" : "29292",
+      "date" : "292929",
+      "endHour" : "20-202",
+      "eventSalary" : "19191",
+      "location" : "new",
+      "startHour" : "2992"
+    },
+    "-MT1EvDUuqAmSeLcstEI" : {
+      "availability" : "32727",
+      "date" : "2728",
+      "endHour" : "28282",
+      "eventSalary" : "2929",
+      "location" : "sdsc",
+      "startHour" : "2828"
+    }
+  },
+  "User" : {
+    "Fx9kFOOejQNYB7JOfp8YvaAMx282" : {
+      "city" : "tel Aviv ",
+      "email" : "dana@gmail.com",
+      "gardId" : false,
+      "idNumber" : "393837",
+      "manager" : false,
+      "name" : "Dana",
+      "password" : "12345678",
+      "phoneNumber" : "3938373"
+    },
+    "ff7RyeIdmLbsYFSXo15V29S2MTj1" : {
+      "city" : "Tel Aviv",
+      "email" : "shirangold77@gmail.com",
+      "gardId" : false,
+      "idNumber" : "307262816",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/alpha-4d7ef.appspot.com/o/Profile%20Pic%2Fff7RyeIdmLbsYFSXo15V29S2MTj1.jpg?alt=media&token=62dfe743-17cd-4944-be02-200939e5373d",
+      "manager" : true,
+      "name" : "Shiran Gold 77",
+      "password" : "12345678",
+      "phoneNumber" : "0542983773"
+    },
+    "uYJqSAHcPaUQywSQG3C5m8D3pLg1" : {
+      "city" : "tel avivi ",
+      "email" : "daniz.dj@gmail.com",
+      "gardId" : false,
+      "idNumber" : "307829387",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/alpha-4d7ef.appspot.com/o/Profile%20Pic%2FuYJqSAHcPaUQywSQG3C5m8D3pLg1.jpg?alt=media&token=355ad8eb-f202-48e7-9269-065f7763db77",
+      "manager" : true,
+      "name" : "Daniel Zarfati",
+      "password" : "12345678",
+      "phoneNumber" : "0542083737"
+    }
+  }
+}
