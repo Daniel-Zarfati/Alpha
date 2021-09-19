@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Alpha">
+        <activity android:name=".Main.GoogleMap"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+
         <activity android:name=".View.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +30,9 @@
         </activity>
         <activity android:name=".Main.SignInManager" />
         <activity android:name=".Main.ForgotPassword" />
-        <activity android:name=".Events.RegisterEvent"></activity>
+        <activity android:name=".Events.RegisterEvent" />
         <activity android:name=".Main.EditProfile" />
-        <activity android:name=".Main.SignIn"></activity>
+        <activity android:name=".Main.SignIn" />
         <activity android:name=".Main.Register" />
         <activity android:name=".Main.Home" />
         <activity

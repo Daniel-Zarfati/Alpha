@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.alpha.FragmentsClasses.AllRightsFragment;
 import com.example.alpha.FragmentsClasses.FutureEventsFragment;
+import com.example.alpha.FragmentsClasses.GoogleFMapFragment;
 import com.example.alpha.FragmentsClasses.ManagerCircleOptionsFragment;
 import com.example.alpha.FragmentsClasses.MyEventsFragment;
-import com.example.alpha.FragmentsClasses.SalaryFragment;
 import com.example.alpha.Model.GlobalVar;
 import com.example.alpha.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -72,7 +72,7 @@ public class Home extends AppCompatActivity {
                         break;
 
                     case R.id.Salary:
-                        selectedFragment = new SalaryFragment();
+                        selectedFragment = new GoogleFMapFragment();
                         break;
 
                     case R.id.LogOut:
