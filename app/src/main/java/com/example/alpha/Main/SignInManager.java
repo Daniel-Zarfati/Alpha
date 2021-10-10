@@ -120,6 +120,8 @@ public class SignInManager extends AppCompatActivity {
                         Toast.makeText(SignInManager.this, "Sign in failed", Toast.LENGTH_SHORT).show();
                         loadingBar.dismiss();
                     }
+
+                    /*check*/
                 }
             });
         }
